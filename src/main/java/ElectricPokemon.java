@@ -21,6 +21,7 @@ public class ElectricPokemon extends Pokemon {
      * ElectricPokemon's specialty attack is THUNDERBOLT
      */
     public ElectricPokemon() {
+        super();
         pokeType = PokemonType.ELECTRIC;
         specialtyAttack = "THUNDERBOLT";
         specialtyProbability = specProb;

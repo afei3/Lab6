@@ -102,8 +102,50 @@ public class Colosseum {
      * (Look, we can return objects too!)
      */
     public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
-        return returnPokemon;
+        Pokemon tempPokemon = new Pokemon();
+        System.out.println("Please enter the attack level of the pokemon less than 50");
+        int test = myScan.nextInt();
+        while (test > MAX_HIT_POINTS - 1 || test < 1) {
+            System.out.println("Sorry please enter a valid number");
+            test = myScan.nextInt();
+        }
+        tempPokemon.setAttackLevel(test);
+        System.out.println("Please enter the defense level of the pokemon.");
+        int def = myScan.nextInt();
+        while (def > MAX_HIT_POINTS - 1 - test || def < 1) {
+            System.out.println("Sorry please enter a valid number");
+            def = myScan.nextInt();
+        }
+        tempPokemon.setDefenseLevel(def);
+        System.out.println("Please enter the number of hitpoints your pokemon has");
+        int hpTest = myScan.nextInt();
+        while (hpTest > MAX_HIT_POINTS - 1 || test < 1) {
+            System.out.println("Sorry please enter a valid number");
+            hpTest = myScan.nextInt();
+        }
+        tempPokemon.setHitPoints(hpTest);
+        System.out.println("Please enter a name");
+        tempPokemon.setName(myScan.next());
+        System.out.println("Please enter the type of your pokemon from 1 through 3");
+        System.out.println("1 - Electric");
+        System.out.println("2 - Fire");
+        System.out.println("3 - Water");
+        int type = myScan.nextInt();
+        while (type > 3 || type < 1) {
+            System.out.println("I'm sorry, please enter a integer between 1 and 3");
+            type = myScan.nextInt();
+        }
+        if (type == 1) {
+            tempPokemon.pokeType = Pokemon.PokemonType.ELECTRIC;
+            Pokemon returnPokemon =
+        }
+        if (type == 2) {
+            tempPokemon.pokeType = Pokemon.PokemonType.FIRE;
+        }
+        if (type == 3) {
+            tempPokemon.pokeType = Pokemon.PokemonType.WATER;
+        }
+        return tempPokemon;
     }
 
     /**
